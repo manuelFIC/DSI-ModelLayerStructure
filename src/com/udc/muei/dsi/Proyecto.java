@@ -1,7 +1,7 @@
 package com.udc.muei.dsi;
 
-public interface Proyecto  {
+public abstract class Proyecto  {
 
-   public String getNombreProyecto();
+   abstract String getNombreProyecto();
 
 }

@@ -6,7 +6,7 @@ public class Anotacion extends Fuente {
     private String tituloAnotacion;
     private String anotacion;
 
-    /* Atributos propios de un filtro*/
+    /* Atributos propios de una anotacion*/
 
     public Anotacion(Fuente fuente, String tituloAnotacion) {
         this.fuente = fuente;
@@ -33,7 +33,5 @@ public class Anotacion extends Fuente {
     public void setAnotacion(String anotacion) {
         this.anotacion = anotacion;
     }
-
-
 
 }

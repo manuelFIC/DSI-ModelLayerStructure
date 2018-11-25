@@ -1,6 +1,6 @@
 package com.udc.muei.dsi;
 
-public abstract class Fuente implements Proyecto{
+public abstract class Fuente extends Proyecto{
 
     /* Operaciones comunes a las fuentes */
 
