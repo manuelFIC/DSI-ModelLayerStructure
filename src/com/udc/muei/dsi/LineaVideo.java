@@ -4,38 +4,49 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class LineaVideo extends Proyecto{
+public class LineaVideo extends ComponenteVideo{
 
-    private String nombreProyecto;
-    private List<Proyecto> proyectos = new ArrayList<>();
+    private String nombreLinea;
+    private List<ComponenteVideo> componenteVideos = new ArrayList<>();
 
     /* Atributos propios de una linea de video*/
 
-    public LineaVideo(String nombreProyecto) {
-        this.nombreProyecto = nombreProyecto;
+    public LineaVideo(String nombreLinea) {
+        this.nombreLinea = nombreLinea;
+    }
+
+    public String getNombreLinea() {
+        return nombreLinea;
     }
 
     @Override
-    public String getNombreProyecto() {
-        return nombreProyecto + ": {"+proyectos.stream()
-                .map(Proyecto::getNombreProyecto)
-                .collect(Collectors.joining(","))+"}";
+    String getNombreComponente() {
+        return "{"+this.nombreLinea+" ["+this.componenteVideos.stream()
+                        .map(ComponenteVideo::getNombreComponente)
+                        .collect(Collectors.joining(","))+"]}";
     }
 
-    public LineaVideo(String nombreProyecto, List<Proyecto> proyectos) {
-        this.nombreProyecto = nombreProyecto;
-        this.proyectos = proyectos;
+    public void setNombreLinea(String nombreLinea) {
+        this.nombreLinea = nombreLinea;
     }
 
-    public void addProyecto(Proyecto proyecto) {
-        proyectos.add(proyecto);
+    public void addComponenteVideo(ComponenteVideo componenteVideo) {
+        this.componenteVideos.add(componenteVideo);
     }
 
-    public void removeProyecto(Proyecto proyecto) {
-        proyectos.remove(proyecto);
+    public ComponenteVideo getComponenteVideo(int index) {
+        return this.componenteVideos.get(index);
     }
 
-    public Proyecto getProyecto(int index) {
-       return proyectos.get(index);
+    public void removeComponenteVideo(ComponenteVideo componenteVideo) {
+        this.componenteVideos.remove(componenteVideo);
+    }
+
+    public List<ComponenteVideo> getComponenteVideos() {
+        return componenteVideos;
+    }
+
+    public void setComponenteVideos(List<ComponenteVideo> componenteVideos) {
+        this.componenteVideos = componenteVideos;
     }
 }

@@ -1,11 +1,11 @@
 package com.udc.muei.dsi;
 
-public abstract class Fuente extends Proyecto{
+public abstract class Fuente extends ComponenteVideo{
 
     /* Operaciones comunes a las fuentes */
 
     @Override
-    public String getNombreProyecto() {
+    String getNombreComponente() {
         return "{"+getNombre()+"}";
     }
 

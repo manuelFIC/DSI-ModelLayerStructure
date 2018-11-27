@@ -31,7 +31,7 @@ public abstract class Composicion extends Fuente{
 
     @Override
     public String getNombre() {
-        return  getNombreComposicion() + "["+ getFuentes().stream()
+        return  "{"+getNombreComposicion() + "["+ getFuentes().stream()
                         .map(Fuente::getNombre)
                         .collect(Collectors.joining(","))+"]}";
     }
